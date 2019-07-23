@@ -4,5 +4,16 @@
     </head>
     <body>
         <h1>This is the page which displays a list of medications</h1>
+
+        <table>
+        {{#rows}}
+            <tr>
+                <td>{{midi}}</td>
+                <td>{{name}}</td>
+                <td>{{count}}</td>
+                <td>{{brand}}</td>
+            </tr>
+        {{/rows}}
+        </table>
     </body>
 </html>
