@@ -8,10 +8,15 @@
         <table>
         {{#rows}}
             <tr>
-                <td>{{midi}}</td>
+                <td>{{mid}}</td>
                 <td>{{name}}</td>
                 <td>{{count}}</td>
                 <td>{{brand}}</td>
+                <td>
+                    <form action = "/meds/delete/{{mid}}" method="post">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
             </tr>
         {{/rows}}
         </table>
