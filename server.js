@@ -34,7 +34,7 @@ app.post('/meds/add',(req,res)=>{
             return client.query(sql,params);
         })
         .then((result)=>{
-            console.log('results?', result)
+            //console.log('results?', result)
             res.redirect('/meds');
         });
 });
@@ -54,7 +54,7 @@ app.get('/meds',(req,res)=>{
             return client.query('SELECT * FROM meds');
         })
         .then((results)=>{
-            console.log('results?',results);
+            //console.log('results?',results);
             res.render('meds',results);
         })
     ;
@@ -76,6 +76,48 @@ app.post('/meds/delete/:id',(req,res)=>{
             return client.query(sql, params);
         })
         .then((results)=>{
+            res.redirect('/meds');
+        })
+    ;
+});
+
+app.get('/edit/:id',(req,res)=>{
+    const client = new Client({
+        host:'localhost',
+        database:'medical',
+        port: 5432,
+        password: '1110',
+        user: 'postgres',
+    });
+
+    client.connect()
+        .then(()=>{
+            const sql = 'SELECT * FROM meds WHERE mid=$1';
+            const params = [req.params.id];
+            return client.query(sql, params);
+        })
+        .then((results)=>{
+            res.render('med-edit', {meds: results.rows[0]});
+        })
+    ;
+});
+
+app.post('/meds/edit/:id',(req,res)=>{
+    const client = new Client({
+        host:'localhost',
+        database:'medical',
+        port: 5432,
+        password: '1110',
+        user: 'postgres',
+    });
+
+    client.connect()
+        .then(()=>{
+            const sql = 'UPDATE meds SET name=$1, count=$2,brand=$3 WHERE mid=$4';
+            const params = [req.body.name, req.body.count, req.body.brand,req.params.id];
+            return client.query(sql, params);
+        })
+        .then(()=>{
             res.redirect('/meds');
         })
     ;
