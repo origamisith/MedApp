@@ -1,0 +1,32 @@
+#myVideo{
+    width:100%;
+}
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.centered-heading {
+    position: absolute;
+    weight: bold;
+    top: 30%;
+    left:40%;
+    color: white;
+    font-size: 4em;
+}
+
+.centered {
+    position: absolute;
+    top: 43%;
+    font-style:italic;
+    left:35%;
+    color: white;
+    font-size: 1.5em;
+}
+
+#continue{
+    position: absolute;
+    top: 50%;
+    left:45%;
+}
