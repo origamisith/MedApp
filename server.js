@@ -17,8 +17,6 @@ app.get('/add',(req,res)=>{
 });
 
 app.post('/meds/add',(req,res)=>{
-    console.log('post body',req.body);
-
     const client = new Client({
         host:'localhost',
         database:'medical',
@@ -34,8 +32,26 @@ app.post('/meds/add',(req,res)=>{
             return client.query(sql,params);
         })
         .then((result)=>{
-            //console.log('results?', result)
             res.redirect('/meds');
+        });
+});
+
+app.get('/dashboard',(req,res)=>{
+    const client = new Client({
+        host:'localhost',
+        database:'medical',
+        port: 5432,
+        password: '1110',
+        user: 'postgres',
+    });
+    client.connect()
+        .then(()=>{
+            return client.query('SELECT SUM(count) FROM meds; SELECT DISTINCT COUNT(brand) FROM meds');
+        })
+        .then((results)=>{
+            console.log('?results',results[0]);
+            console.log('?results',results[1]);
+            res.render('dashboard', {n1:results[0].rows,n2:results[1].rows});
         });
 });
 
@@ -51,10 +67,9 @@ app.get('/meds',(req,res)=>{
 
     client.connect()
         .then(()=>{
-            return client.query('SELECT * FROM meds');
+            return client.query('SELECT * FROM meds ORDER BY mid');
         })
         .then((results)=>{
-            //console.log('results?',results);
             res.render('meds',results);
         })
     ;
