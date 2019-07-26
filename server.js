@@ -52,9 +52,6 @@ app.get('/dashboard',(req,res)=>{
             console.log('?results',results[0]);
             console.log('?results',results[1]);
             res.render('dashboard', {n1:results[0].rows,n2:results[1].rows});
-        })
-        .catch(()=>{
-            system.log("sucks 4 you");
         });
 });
 
