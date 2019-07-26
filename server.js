@@ -137,7 +137,13 @@ app.post('/meds/edit/:id',(req,res)=>{
         })
     ;
 });
-
+/*
 app.listen(5001,()=>{
     console.log('Listening to port 5001');
+});
+*/
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
 });
