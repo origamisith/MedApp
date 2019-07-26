@@ -18,11 +18,11 @@ app.get('/add',(req,res)=>{
 
 app.post('/meds/add',(req,res)=>{
     const client = new Client({
-        host:'localhost',
-        database:'medical',
+        host:'ec2-54-243-47-196.compute-1.amazonaws.com',
+        database:'darcq7v6s2osn6',
         port: 5432,
-        password: '1110',
-        user: 'postgres',
+        password: '31ec3bb064ed0987e2ea40a3a489e2777b0b3a66e016aadf4df39241c052657a',
+        user: 'undhqjwyiqezfr',
     });
     client.connect()
         .then(()=>{
@@ -38,11 +38,11 @@ app.post('/meds/add',(req,res)=>{
 
 app.get('/dashboard',(req,res)=>{
     const client = new Client({
-        host:'localhost',
-        database:'medical',
+        host:'ec2-54-243-47-196.compute-1.amazonaws.com',
+        database:'darcq7v6s2osn6',
         port: 5432,
-        password: '1110',
-        user: 'postgres',
+        password: '31ec3bb064ed0987e2ea40a3a489e2777b0b3a66e016aadf4df39241c052657a',
+        user: 'undhqjwyiqezfr',
     });
     client.connect()
         .then(()=>{
@@ -59,11 +59,11 @@ app.get('/dashboard',(req,res)=>{
 app.get('/meds',(req,res)=>{
 
     const client = new Client({
-        host:'localhost',
-        database:'medical',
+        host:'ec2-54-243-47-196.compute-1.amazonaws.com',
+        database:'darcq7v6s2osn6',
         port: 5432,
-        password: '1110',
-        user: 'postgres',
+        password: '31ec3bb064ed0987e2ea40a3a489e2777b0b3a66e016aadf4df39241c052657a',
+        user: 'undhqjwyiqezfr',
     });
 
     client.connect()
@@ -78,11 +78,11 @@ app.get('/meds',(req,res)=>{
 
 app.post('/meds/delete/:id',(req,res)=>{
     const client = new Client({
-        host:'localhost',
-        database:'medical',
+        host:'ec2-54-243-47-196.compute-1.amazonaws.com',
+        database:'darcq7v6s2osn6',
         port: 5432,
-        password: '1110',
-        user: 'postgres',
+        password: '31ec3bb064ed0987e2ea40a3a489e2777b0b3a66e016aadf4df39241c052657a',
+        user: 'undhqjwyiqezfr',
     });
 
     client.connect()
@@ -99,11 +99,11 @@ app.post('/meds/delete/:id',(req,res)=>{
 
 app.get('/edit/:id',(req,res)=>{
     const client = new Client({
-        host:'localhost',
-        database:'medical',
+        host:'ec2-54-243-47-196.compute-1.amazonaws.com',
+        database:'darcq7v6s2osn6',
         port: 5432,
-        password: '1110',
-        user: 'postgres',
+        password: '31ec3bb064ed0987e2ea40a3a489e2777b0b3a66e016aadf4df39241c052657a',
+        user: 'undhqjwyiqezfr',
     });
 
     client.connect()
@@ -120,11 +120,11 @@ app.get('/edit/:id',(req,res)=>{
 
 app.post('/meds/edit/:id',(req,res)=>{
     const client = new Client({
-        host:'localhost',
-        database:'medical',
+        host:'ec2-54-243-47-196.compute-1.amazonaws.com',
+        database:'darcq7v6s2osn6',
         port: 5432,
-        password: '1110',
-        user: 'postgres',
+        password: '31ec3bb064ed0987e2ea40a3a489e2777b0b3a66e016aadf4df39241c052657a',
+        user: 'undhqjwyiqezfr',
     });
 
     client.connect()
