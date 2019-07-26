@@ -51,9 +51,9 @@ app.get('/dashboard',(req,res)=>{
         .then((results)=>{
             res.render('dashboard', {n1:results[0].rows,n2:results[1].rows});
         })
-        .catch(next){
-            console.log(next)
-        };
+        .catch((next)=>{
+            console.log(next);
+        });
 });
 
 app.get('/meds',(req,res)=>{
